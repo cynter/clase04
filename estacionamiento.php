@@ -8,8 +8,12 @@ class Estacionamiento
 		//echo $patente;
 
 		$miArchivo = fopen("estacionado.txt", "a"); //apertura de archivo
+		//fecha
+		$fecha= date("Y-m-d H:i:s");
+		$reglon="$patente"."$fecha"."\n";
 		
-		fwrite($miArchivo, $patente."\n");
+		fwrite($miArchivo, $reglon."\n");
+		fclose($miArchivo);
 
 	}
 
